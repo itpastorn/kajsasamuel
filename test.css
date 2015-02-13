@@ -1,0 +1,20 @@
+html  {
+    background: url(bg-test-1.png) hsl(35, 44%, 40%);
+}
+body {
+    position: relative;
+    width: 800px;
+    background: url(textbg.png) hsla(33, 39%, 73%, 1);
+    border: 3px solid pink;
+    margin: auto;
+    min-height: 90vh;
+    text-align: center;
+    font-size: xx-large;
+}
+#ribbon {
+    position: absolute;
+    width: 25px;
+    background-color: hsla(347, 47%, 25%, 1);
+    top: 0;
+    bottom: 0;
+}
