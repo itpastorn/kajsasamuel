@@ -1,0 +1,11 @@
+AddDefaultCharset UTF-8
+
+#RewriteEngine On
+#RewriteBase /wedding/
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^plats$ plats/ [R=301,NC,L]
+#RewriteRule ^plats/$ placering.html [NC,L]
+#RewriteRule ^ml$ ml/ [R=301,NC,L]
+#RewriteRule ^ml/$ tavling.php [NC,L]
+#RewriteRule ^resultatq$ resultatq/ [R=301,NC,L]
+#RewriteRule ^resultatq/$ resultat.php [NC,L]

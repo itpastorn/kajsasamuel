@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Edwardian Script ITC;
+    src: url(ITCEDSCR.TTF);
+}
+html  {
+    background-color:hsl(0, 50%, 20%);
+}
+body {
+    position: relative;
+    width: 800px;
+    background-color:hsla(33, 39%, 73%, 1);
+    margin: 8vh auto;
+    min-height: 85vh;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: xx-large;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+h1, h2 {
+    font-family: Edwardian Script ITC;
+}
+.vertical {
+}
