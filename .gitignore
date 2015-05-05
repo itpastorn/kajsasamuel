@@ -1,0 +1,8 @@
+*.jpg
+*.png
+*.psd
+*.doc*
+node_modules
+node_modules/*
+*.TTF
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <title>Kajsa och Samuel</title>
+  <link rel="stylesheet" href="placeholder.css" />
+</head>
+<body class="vertical">
+  <div id="content">
+    <h1>Kajsa &amp; Samuel</h1>
+    <h2>15/8 2015 kl. 14:00</h2>
+	<h2>Månsarps kyrka</h2>
+    <p class="centered">
+      Tid kvar: <span id="days">00</span> dag<span id="daynoun">ar</span>, <span id="hours">00</span>
+      timm<span id="hournoun">ar</span>, <span id="minutes">00</span> minut<span id="minnoun">er</span>
+      och <span id="seconds">00</span> sekund<span id="secnoun">er</span>.
+    </p>
+	<nav>
+	  <ul>
+	    <li><a href="./">Start</a></li>
+		<li><a href="./vardar/">Värdar</a></li>
+		<li><a href="./boende/">Tips på boende</a></li>
+		<li><a href="./onskelista/">Önskelista</a></li>
+	  </ul>
+	</nav>
+	<figure>
+	  <img src="img/intill-cropped-2.jpg" alt="Kajsa och Samuel" />
+	</figure>
+	<h2>
+	  Välkommen till hemsidan för vårt bröllop!
+    </h2>
+	<p>
+      Vi är väldigt glada över att få fira vår stora dag tillsammans med er.
+    </p>
+	<p>
+      Välkommen att vara med på vår vigsel och om du har fått en inbjudan är du även medbjuden på fest efteråt.
+    </p>
+    <p class="tip">Du kan få ett mejl när denna sida uppdateras, genom att gå till
+     <a href="http://visualping.io/">Visualping</a> och ange adressen <tt>keryx.se/samuelkajsa</tt>.
+     <br>Tips: Välj <q lang="en">Every day</q> och <q lang="en">On Major change</q>.</p>
+  </div>
+  <script>
+  function countDown() {
+      var seconds = Math.round((Date.UTC(2015,7,15,12) - Date.now())/1000);
+      var days = Math.floor(seconds/3600/24);
+      seconds -= days * 24 * 3600;
+      var hours = Math.floor(seconds/3600);
+      seconds -= hours * 3600;
+      var minutes = Math.floor(seconds/60);
+      seconds -= minutes * 60;
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+      document.getElementById("daynoun").innerHTML = (Math.abs(days) === 1) ? "": "ar";
+      document.getElementById("hournoun").innerHTML = (Math.abs(hours) === 1) ? "": "ar";
+      document.getElementById("minnoun").innerHTML = (Math.abs(minutes) === 1) ? "": "er";
+      document.getElementById("secnoun").innerHTML = (Math.abs(seconds) === 1) ? "": "er";
+  }
+  countDown();
+  setInterval(countDown, 200);
+  </script>
+</body>
+</html>

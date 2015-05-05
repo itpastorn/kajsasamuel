@@ -1,0 +1,23 @@
+{
+  "name": "kajsasamuel",
+  "version": "0.0.0",
+  "description": "Bröllopswebb för Samuel och Kajsa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itpastorn/kajsasamuel.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/itpastorn/kajsasamuel/issues"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "~5.1.11",
+    "grunt": "~0.4.5",
+    "grunt-postcss": "~0.4.0"
+  }
+}
