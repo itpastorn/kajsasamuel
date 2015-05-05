@@ -1,28 +1,75 @@
 @font-face {
-    font-family: Edwardian Script ITC;
+    font-family: "Edwardian Script ITC";
     src: url(ITCEDSCR.TTF);
 }
 html  {
     background-color:hsl(0, 50%, 20%);
 }
 body {
-    position: relative;
-    width: 800px;
+    width: 90vw;
+    max-width: 800px;
+    min-height: 87vh;
+    padding: 2rem;
     background-color:hsla(33, 39%, 73%, 1);
-    margin: 8vh auto;
+    margin: 3vh auto;
     min-height: 85vh;
-    text-align: center;
     font-family: sans-serif;
-    font-size: xx-large;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    border-radius: 50%;
+    border-radius: 5%;
+}
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 3rem;
 }
 h1, h2 {
-    font-family: Edwardian Script ITC;
+    font-family: "Edwardian Script ITC", sans-serif;
+    font-weight: normal;
+    margin: 1rem 0;
+    text-align: center;
+}
+nav {
+    background-color: pink;
+}
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+nav > ul > li {
+    list-style: none;
+    margin: 0;
+    padding: 0.2rem;
+}
+nav > ul > li > a{
+    text-decoration: none;
+}
+figure {
+    display: flex;
+    justify-content: center;
+}
+p {
+    font-size: medium;
+    margin: 1rem;
+    
+}
+tt {
+    font-size: larger;
+}
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 .vertical {
+    display: flex;
+    flex-direction: column;
+        flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
+.tip {
+    font-size: smaller;
+}
+:root .vertical > div { padding-top: 20vh \0/IE9; }  /* IE9 */
