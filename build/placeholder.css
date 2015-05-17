@@ -45,10 +45,18 @@ nav {
     padding: 0.3rem;
 }
 nav > ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     margin: 0;
     padding: 0;
 }
@@ -71,18 +79,22 @@ nav > ul > li > a:visited {
 nav > ul > li > a:focus,
 nav > ul > li > a:hover {
     text-decoration: underline;
-    text-decoration-style: dotted;
+    -webkit-text-decoration-style: dotted;
+       -moz-text-decoration-style: dotted;
+            text-decoration-style: dotted;
 }
 nav > ul > li > a:active {
 }
 figure {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 2rem;
-}
-img {
-    width: 459px;
-    height: 369;
 }
 p {
     font-size: medium;
@@ -98,57 +110,31 @@ tt {
     text-align: center;
 }
 .vertical {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .tip {
     font-size: smaller;
 }
-.counter {
-    border: 1px solid hsla(0, 50%, 15%,0.2);
-    padding: 0.3rem;
-    border-radius: 5px;
-    background-color: rgba(255,255,255,0.2)
-}
 :root .vertical > div { padding-top: 20vh \0/IE9; }  /* IE9 */
-@media (max-width: 800px) {
-    body {
-        width: 90vw;
-        padding: 1rem;
-    }
-    h1 {
-        font-size: 5.3rem;
-        padding: 1rem;
-    }
-    img {
-        width: 56vw;
-        height: 46vw;
-    }
-}
-@media (max-width: 600px) {
-    h1 {
-        font-size: 5rem;
-        padding: 1rem;
-    }
-    img {
-        width: 75vw;
-        height: 61vw;
-    }
-}
-@media (max-width: 565px) {
-    h1 {
-        font-size: 14vw; /* Vågar jag detta? */
-        padding: 0.7rem;
-        padding-left: 0.5rem;
-   }
-}
-/* Collapse menu */
-@media (max-width: 510px) {
-    nav {
-        display: none; /* temp */
-    }
-}

@@ -1,22 +1,19 @@
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
         autoprefixer: {
             dist: {
                 files: {
-                    'build/style.css': 'style.css'
+                    'build/placeholder.css': 'placeholder.css'
                 }
             }
         },
         watch: {
             styles: {
-                files: ['placeholder.css'],
+                files: ['*.css'],
                 tasks: ['autoprefixer']
             }
         }
     });
-
-    // task setup 
-    grunt.registerTask('default', []);
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 };
