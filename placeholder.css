@@ -9,13 +9,17 @@ body {
     border: 2px solid hsl(0, 50%, 20%);
     width: 90vw;
     max-width: 800px;
-    min-height: 87vh;
     padding: 2rem;
     background: url(img/papper-2-bg.png) hsla(29, 25%, 60%, 1);
-    margin: 2vh auto;
-    min-height: 85vh;
+    margin: 1em auto;
     font-family: sans-serif;
     border-radius: 1.5rem;
+}
+h1, h2 {
+    font-family: "Edwardian Script ITC", sans-serif;
+    font-weight: normal;
+    margin: 1rem 0;
+    text-align: center;
 }
 h1 {
     color: hsl(0, 50%, 15%);
@@ -29,16 +33,21 @@ h1 {
 h2 {
     color: hsl(0, 50%, 20%);
     font-size: 3rem;
+    line-height: 1;
 }
-h1, h2 {
-    font-family: "Edwardian Script ITC", sans-serif;
-    font-weight: normal;
-    margin: 1rem 0;
-    text-align: center;
+.below {
+    font-size: 2.4rem;
+    margin: 0.3rem;
 }
-.counter {
+p {
+    padding: 0 0.5em;
+    line-height: 1.3;
+}
+.nav-checkbox {
+    display: none;
 }
 nav {
+    display: flex;
     border-top: 1px solid hsl(0, 50%, 20%);;
     border-bottom: 1px solid hsl(0, 50%, 20%);;
     margin: 1rem 0 2rem;
@@ -46,6 +55,7 @@ nav {
 }
 nav > ul {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -68,21 +78,33 @@ nav > ul > li > a:link {
 nav > ul > li > a:visited {
     color: hsl(330, 80%, 30%);
 }
+label,a {
+    transition: background-color 0.1s ease;
+}
+label:focus,
+label:hover,
 nav > ul > li > a:focus,
 nav > ul > li > a:hover {
     text-decoration: underline;
     text-decoration-style: dotted;
+    background-color: rgba(255,255,255,0.2);
 }
 nav > ul > li > a:active {
+}
+nav > label {
+    display: none;
+    cursor: pointer;
 }
 figure {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
-img {
+.startimg {
+    /* native 549 x 441 */
     width: 459px;
-    height: 369;
+    height: 369px;
+    border-radius: 5px;
 }
 p {
     font-size: medium;
@@ -97,36 +119,42 @@ tt {
     margin-right: auto;
     text-align: center;
 }
-.vertical {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
 .tip {
     font-size: smaller;
 }
-.counter {
+.cwrap {
+    color: #444;
+    margin: 2rem auto;;
+    width: 449px;
+    line-height: 1.7;
     border: 1px solid hsla(0, 50%, 15%,0.2);
-    padding: 0.3rem;
+    padding: 5px;
     border-radius: 5px;
     background-color: rgba(255,255,255,0.2)
 }
-:root .vertical > div { padding-top: 20vh \0/IE9; }  /* IE9 */
+.counter {
+}
 @media (max-width: 800px) {
     body {
         width: 90vw;
         padding: 1rem;
     }
     h1 {
-        font-size: 5.3rem;
+        font-size: 5.4rem;
         padding: 1rem;
     }
-    img {
+    h2 {
+        font-size: 2.7rem;
+    }
+    .below {
+        font-size: 2.2rem;
+    }
+    .startimg {
         width: 56vw;
         height: 46vw;
+    }
+    .cwrap {
+        width: 54.75vw;
     }
 }
 @media (max-width: 600px) {
@@ -134,21 +162,160 @@ tt {
         font-size: 5rem;
         padding: 1rem;
     }
-    img {
+    h2 {
+        font-size: 2.5rem;
+    }
+    .below {
+        font-size: 2rem;
+    }
+    p, li {
+        font-size: 90%;
+    }
+    .startimg {
         width: 75vw;
         height: 61vw;
+    }
+    p {
+        width: 73.4vw;
+        font-size: 0.8rem;
     }
 }
 @media (max-width: 565px) {
     h1 {
         font-size: 14vw; /* Vågar jag detta? */
         padding: 0.7rem;
-        padding-left: 0.5rem;
-   }
+        padding-left: .2rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    .below {
+        font-size: 2rem;
+    }
+    .centered:not(.cwrap) {
+         width: 80vw;
+     }
 }
 /* Collapse menu */
-@media (max-width: 510px) {
-    nav {
-        display: none; /* temp */
+@media (max-width: 540px) {
+    body {
+        width: 88vw;
+    }
+    h2 {
+        font-size: 2.3rem;
+    }
+    .below {
+        font-size: 1.9rem;
+    }
+    nav > ul {
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        transition: max-height .25s linear;
+    }
+    #nav-checkbox + nav {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #nav-checkbox:checked + nav > ul {
+        max-height: 6.9em;
+    }
+    #nav-checkbox + nav > ul > li {
+        visibility: hidden;
+        transition: visibility .25s linear;
+        text-align: center;
+        padding: 0.2em;
+        width: 100%;
+    }
+    #nav-checkbox:checked + nav > ul > li {
+        visibility: visible;
+    }
+    nav > label {
+        display: block;
+        text-align: right;
     }
 }
+@media (max-width: 400px) {
+    body {
+        width: 86vw;
+    }
+}
+@media (max-width: 350px) {
+    body {
+        width: 84vw;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .below {
+        font-size: 1.6rem;
+    }
+}
+
+.debug {
+    display: none;
+}
+/**
+ * Bug fix for iPhones
+ * 56vw x 46vh recalculated as pixels
+ * 320 x 480
+ * 320 x 568
+ * 375 x 667
+ * 414 x 736
+ */
+@media all and (device-width: 320px) and (device-height: 480px) and (orientation:portrait){
+    .startimg {
+         width: 179px;
+         height: 147px;
+    }
+    #i4 {
+        display: block;
+    }
+}
+@media all and (device-width: 320px) and (device-height: 480px) and (orientation:landscape){
+    .startimg {
+         width: 269px;
+         height: 221px;
+    }
+    #i4 {
+        display: block;
+    }
+}
+@media all and (device-width: 320px) and (device-height: 568px) and (orientation:portrait){
+    .startimg {
+         width: 179px;
+         height: 147px;
+    }
+    #i5 {
+        display: block;
+    }
+}
+@media all and (device-width: 320px) and (device-height: 568px) and (orientation:landscape){
+    .startimg {
+         width: 318px;
+         height: 261px;
+    }
+    #i5 {
+        display: block;
+    }
+}
+@media all and (device-width: 375px) and (device-height: 667px) and (orientation:portrait){
+    .startimg {
+         width: 210px;
+         height: 172.5px;
+    }
+    #i6 {
+        display: block;
+    }
+}
+@media all and (device-width: 375px) and (device-height: 667px) and (orientation:landscape){
+    .startimg {
+         width: 373.5px;
+         height: 307px;
+    }
+    #i6 {
+        display: block;
+    }
+}
+
+

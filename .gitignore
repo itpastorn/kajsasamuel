@@ -2,6 +2,7 @@
 *.png
 *.psd
 *.doc*
+*.xcf
 node_modules
 node_modules/*
 *.TTF
