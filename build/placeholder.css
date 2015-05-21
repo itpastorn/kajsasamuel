@@ -173,11 +173,17 @@ tt {
         font-size: 2.2rem;
     }
     .startimg {
-        width: 56vw;
-        height: 46vw;
+        width: 56vw;  /* 448*/
+        height: 46vw; /* 368 */
     }
     .cwrap {
         width: 54.75vw;
+    }
+}
+@media (max-width: 700px) {
+    .startimg {
+         width: 430px;
+         height: 353px;
     }
 }
 @media (max-width: 600px) {
@@ -195,17 +201,18 @@ tt {
         font-size: 90%;
     }
     .startimg {
-        width: 75vw;
-        height: 61vw;
+        width: 420px;
+        height: 345px;
     }
     p {
         width: 73.4vw;
         font-size: 0.8rem;
     }
 }
+/* Breakpoint for text */
 @media (max-width: 565px) {
     h1 {
-        font-size: 14vw; /* Vågar jag detta? */
+        font-size: 14vw;
         padding: 0.7rem;
         padding-left: .2rem;
     }
@@ -214,6 +221,10 @@ tt {
     }
     .below {
         font-size: 2rem;
+    }
+    .startimg {
+        width: 412.5px;
+        height: 335.5px;
     }
     .centered:not(.cwrap) {
          width: 80vw;
@@ -229,6 +240,10 @@ tt {
     }
     .below {
         font-size: 1.9rem;
+    }
+    .startimg {
+        width: 400px;
+        height: 328.5px;
     }
     nav > ul {
         max-height: 0;
@@ -271,9 +286,25 @@ tt {
         text-align: right;
     }
 }
+@media (max-width: 500px) {
+    .startimg {
+        width: 375px;
+        height: 308px;
+    }
+}
+@media (max-width: 450px) {
+    .startimg {
+        width: 335px;
+        height: 275px;
+    }
+}
 @media (max-width: 400px) {
     body {
         width: 86vw;
+    }
+    .startimg {
+        width: 300px;
+        height: 246.5px;
     }
 }
 @media (max-width: 350px) {
@@ -285,6 +316,19 @@ tt {
     }
     .below {
         font-size: 1.6rem;
+    }
+    .startimg {
+        width: 262.5px;
+        height: 215.5px;
+    }
+}
+@media (max-width: 300px) {
+    body {
+        width: 82vw;
+    }
+    .startimg {
+        width: 225px;
+        height: 185px;
     }
 }
 
@@ -299,6 +343,7 @@ tt {
  * 375 x 667
  * 414 x 736
  */
+ /*
 @media all and (device-width: 320px) and (device-height: 480px) and (orientation:portrait){
     .startimg {
          width: 179px;
@@ -353,5 +398,4 @@ tt {
         display: block;
     }
 }
-
-
+*/
