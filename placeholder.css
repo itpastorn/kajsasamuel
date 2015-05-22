@@ -95,12 +95,16 @@ nav > label {
     display: none;
     cursor: pointer;
 }
+/*
 figure {
     display: flex;
     justify-content: center;
     margin: 2rem 0 1rem;
 }
+*/
 .startimg {
+    display: block;
+    margin: 2rem auto 1.5rem;
     /* native 549 x 441 */
     width: 459px;
     border-radius: 5px;
@@ -246,117 +250,4 @@ tt {
         text-align: right;
     }
 }
-/*
-@media (max-width: 500px) {
-    .startimg {
-        width: 375px;
-        height: 308px;
-    }
-}
-@media (max-width: 450px) {
-    .startimg {
-        width: 335px;
-        height: 275px;
-    }
-}
-@media (max-width: 400px) {
-    body {
-        width: 86vw;
-    }
-    .startimg {
-        width: 300px;
-        height: 246.5px;
-    }
-}
-@media (max-width: 350px) {
-    body {
-        width: 84vw;
-    }
-    h2 {
-        font-size: 2.2rem;
-    }
-    .below {
-        font-size: 1.6rem;
-    }
-    .startimg {
-        width: 262.5px;
-        height: 215.5px;
-    }
-}
-@media (max-width: 300px) {
-    body {
-        width: 82vw;
-    }
-    .startimg {
-        width: 225px;
-        height: 185px;
-    }
-}
-*/
-.debug {
-    display: block;
-}
-/**
- * Bug fix for iPhones
- * 56vw x 46vh recalculated as pixels
- * 320 x 480
- * 320 x 568
- * 375 x 667
- * 414 x 736
- */
- /*
-@media all and (device-width: 320px) and (device-height: 480px) and (orientation:portrait){
-    .startimg {
-         width: 179px;
-         height: 147px;
-    }
-    #i4 {
-        display: block;
-    }
-}
-@media all and (device-width: 320px) and (device-height: 480px) and (orientation:landscape){
-    .startimg {
-         width: 269px;
-         height: 221px;
-    }
-    #i4 {
-        display: block;
-    }
-}
-@media all and (device-width: 320px) and (device-height: 568px) and (orientation:portrait){
-    .startimg {
-         width: 179px;
-         height: 147px;
-    }
-    #i5 {
-        display: block;
-    }
-}
-@media all and (device-width: 320px) and (device-height: 568px) and (orientation:landscape){
-    .startimg {
-         width: 318px;
-         height: 261px;
-    }
-    #i5 {
-        display: block;
-    }
-}
-@media all and (device-width: 375px) and (device-height: 667px) and (orientation:portrait){
-    .startimg {
-         width: 210px;
-         height: 172.5px;
-    }
-    #i6 {
-        display: block;
-    }
-}
-@media all and (device-width: 375px) and (device-height: 667px) and (orientation:landscape){
-    .startimg {
-         width: 373.5px;
-         height: 307px;
-    }
-    #i6 {
-        display: block;
-    }
-}
-*/
+
