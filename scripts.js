@@ -28,10 +28,16 @@
     countDown();
     setInterval(countDown, 200);
 
+    // Bugfixing Chrome and iOS Safari
+    var ua = document.getElementById("ua");
+    var startimg = document.getElementsByClassName("startimg")[0];
+
     if (matchMedia) {
         var mq = window.matchMedia("(max-width: 540px)");
         mq.addListener(widthChange);
-        widthChange(mq);
+        if ( mq.matches ) {
+            widthChange(mq);
+        }
     }
 
     function widthChange(mq) {
@@ -53,6 +59,16 @@
                 return false;
             }
         }
+        var s_img_width = window.getComputedStyle(startimg, null).width;
+        var s_img_height = window.getComputedStyle(startimg, null).height;
+        ua.innerHTML += "W: "+ s_img_width;
+        ua.innerHTML += "<br />H: "+ s_img_height;
+        if ( s_img_width != s_img_height ) {
+            startimg.style.height = ( parseInt(s_img_width, 0) * 0.804 ) + "px";
+            ua.innerHTML += "<br />IMG fixed using JS";
+            s_img_height = window.getComputedStyle(startimg, null).height;
+            ua.innerHTML += "<br />H: "+ s_img_height;
+        }
     }
-    document.getElementById("ua").innerHTML = navigator.userAgent;
 }());
+

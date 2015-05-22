@@ -121,12 +121,11 @@ figure {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-top: 2rem;
+    margin: 2rem 0 1rem;
 }
 .startimg {
     /* native 549 x 441 */
     width: 459px;
-    height: 369px;
     border-radius: 5px;
 }
 p {
@@ -173,17 +172,19 @@ tt {
         font-size: 2.2rem;
     }
     .startimg {
-        width: 56vw;  /* 448*/
-        height: 46vw; /* 368 */
+        width: 70%;  /* 448*/
+        /* height: 46vw; */ /* 368 */
     }
     .cwrap {
-        width: 54.75vw;
+        width: calc(70% - 10px);
     }
 }
 @media (max-width: 700px) {
     .startimg {
-         width: 430px;
-         height: 353px;
+         width: 85%;
+    }
+    .cwrap {
+        width: calc(85% - 10px);
     }
 }
 @media (max-width: 600px) {
@@ -199,10 +200,6 @@ tt {
     }
     p, li {
         font-size: 90%;
-    }
-    .startimg {
-        width: 420px;
-        height: 345px;
     }
     p {
         width: 73.4vw;
@@ -223,11 +220,14 @@ tt {
         font-size: 2rem;
     }
     .startimg {
-        width: 412.5px;
-        height: 335.5px;
+        width: 80%;
+        height: auto; /* Mob chrome/webkit */
+    }
+    .cwrap {
+        width: calc(80% - 10px);
     }
     .centered:not(.cwrap) {
-         width: 80vw;
+         width: 80%;
      }
 }
 /* Collapse menu */
@@ -240,10 +240,6 @@ tt {
     }
     .below {
         font-size: 1.9rem;
-    }
-    .startimg {
-        width: 400px;
-        height: 328.5px;
     }
     nav > ul {
         max-height: 0;
@@ -286,6 +282,7 @@ tt {
         text-align: right;
     }
 }
+/*
 @media (max-width: 500px) {
     .startimg {
         width: 375px;
@@ -331,9 +328,9 @@ tt {
         height: 185px;
     }
 }
-
+*/
 .debug {
-    display: none;
+    display: block;
 }
 /**
  * Bug fix for iPhones

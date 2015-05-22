@@ -47,6 +47,9 @@ p {
     display: none;
 }
 nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     border-top: 1px solid hsl(0, 50%, 20%);;
     border-bottom: 1px solid hsl(0, 50%, 20%);;
@@ -54,11 +57,22 @@ nav {
     padding: 0.3rem;
 }
 nav > ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
@@ -79,14 +93,17 @@ nav > ul > li > a:visited {
     color: hsl(330, 80%, 30%);
 }
 label,a {
-    transition: background-color 0.1s ease;
+    -webkit-transition: background-color 0.1s ease;
+            transition: background-color 0.1s ease;
 }
 label:focus,
 label:hover,
 nav > ul > li > a:focus,
 nav > ul > li > a:hover {
     text-decoration: underline;
-    text-decoration-style: dotted;
+    -webkit-text-decoration-style: dotted;
+       -moz-text-decoration-style: dotted;
+            text-decoration-style: dotted;
     background-color: rgba(255,255,255,0.2);
 }
 nav > ul > li > a:active {
@@ -96,8 +113,14 @@ nav > label {
     cursor: pointer;
 }
 figure {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 2rem 0 1rem;
 }
 .startimg {
@@ -198,7 +221,6 @@ tt {
     }
     .startimg {
         width: 80%;
-        height: auto; /* Mob chrome/webkit */
     }
     .cwrap {
         width: calc(80% - 10px);
@@ -221,19 +243,32 @@ tt {
     nav > ul {
         max-height: 0;
         overflow: hidden;
-        flex-direction: column;
-        transition: max-height .25s linear;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-transition: max-height .25s linear;
+                transition: max-height .25s linear;
     }
     #nav-checkbox + nav {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: column-reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
     }
     #nav-checkbox:checked + nav > ul {
         max-height: 6.9em;
     }
     #nav-checkbox + nav > ul > li {
         visibility: hidden;
-        transition: visibility .25s linear;
+        -webkit-transition: visibility .25s linear;
+                transition: visibility .25s linear;
         text-align: center;
         padding: 0.2em;
         width: 100%;
@@ -294,7 +329,7 @@ tt {
 }
 */
 .debug {
-    display: block;
+    display: none;
 }
 /**
  * Bug fix for iPhones
