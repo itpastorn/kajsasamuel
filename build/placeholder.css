@@ -42,8 +42,9 @@ h2 {
     font-size: 2.4rem;
     margin: 0.3rem;
 }
+h3,
 p {
-    padding: 0 0.5em;
+    padding: 0 0.5rem;
     line-height: 1.3;
 }
 .nav-checkbox {
@@ -115,6 +116,9 @@ nav > label {
     display: none;
     cursor: pointer;
 }
+img {
+    border-radius: 5px;
+}
 figure {
     display: -webkit-box;
     display: -webkit-flex;
@@ -150,7 +154,6 @@ figcaption {
     margin: 2rem auto 1.5rem;
     /* native 549 x 441 */
     width: 459px;
-    border-radius: 5px;
 }
 p {
     font-size: medium;
@@ -184,6 +187,38 @@ tt {
     font-family: monospace;
     font-weight: bold;
     font-size: larger;
+}
+.simplelist > li {
+    margin-bottom: 0.5rem;
+}
+.simplelist > li > a:link {
+    color: hsl(330, 80%, 35%);
+    text-decoration: none;
+}
+.simplelist > li > a:visited {
+    color: hsl(330, 30%, 40%);
+}
+.simplelist > li > a:focus,
+.simplelist > li > a:hover
+{
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+       -moz-text-decoration-style: dotted;
+            text-decoration-style: dotted;
+    background-color: rgba(255,255,255,0.2);
+}
+.subimg {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+.subimg > img {
+    width: 80%;
+}
+iframe {
+    width: 100%;
+    height: 66vw;
+    border: 0;
+    border-radius: 5px;
 }
 @media (max-width: 800px) {
     body {
@@ -331,6 +366,9 @@ tt {
         display: block;
         text-align: right;
     }
+    .subimg > img {
+        width: 90%
+    }
 }
 /* Shrink images in figure */
 @media (max-width: 500px) {
@@ -355,6 +393,9 @@ tt {
     }
     .h533 {
         height: 400px;
+    }
+    iframe {
+        height: 70vw;
     }
 }
 @media (max-width: 338px) {
