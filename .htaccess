@@ -9,3 +9,11 @@ AddDefaultCharset UTF-8
 #RewriteRule ^ml/$ tavling.php [NC,L]
 #RewriteRule ^resultatq$ resultatq/ [R=301,NC,L]
 #RewriteRule ^resultatq/$ resultat.php [NC,L]
+
+RewriteEngine On
+RewriteBase /samuelkajsa/
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^vardar$ vardar/ [R=301,NC,L]
+#RewriteRule ^vardar/$ vardar.html [NC,L]
+RewriteRule ^([^\.]+)/$ $1.html [NC,L]
+

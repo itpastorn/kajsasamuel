@@ -35,6 +35,9 @@ h2 {
     font-size: 3rem;
     line-height: 1;
 }
+.subpage  h2 {
+    font-size: 3rem;
+}
 .below {
     font-size: 2.4rem;
     margin: 0.3rem;
@@ -112,13 +115,36 @@ nav > label {
     display: none;
     cursor: pointer;
 }
-/*
 figure {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 2rem 0 1rem;
 }
-*/
+figure > img {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 400px;
+        -ms-flex: 0 0 400px;
+            flex: 0 0 400px;
+    margin: 0 1rem 1rem 0;
+}
+figcaption {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 300px;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px;
+}
 .startimg {
     display: block;
     margin: 2rem auto 1.5rem;
@@ -128,7 +154,7 @@ figure {
 }
 p {
     font-size: medium;
-    margin: 1rem;
+    margin: 1rem 0;
     
 }
 tt {
@@ -154,6 +180,11 @@ tt {
 }
 .counter {
 }
+.email {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: larger;
+}
 @media (max-width: 800px) {
     body {
         width: 90vw;
@@ -176,6 +207,20 @@ tt {
     .cwrap {
         width: calc(70% - 10px);
     }
+    figcaption {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 250px;
+            -ms-flex: 0 0 250px;
+                flex: 0 0 250px;
+    }
+}
+@media (max-width: 750px) {
+    figcaption {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 200px;
+            -ms-flex: 0 0 200px;
+                flex: 0 0 200px;
+    }
 }
 @media (max-width: 700px) {
     .startimg {
@@ -183,6 +228,13 @@ tt {
     }
     .cwrap {
         width: calc(85% - 10px);
+    }
+    figcaption {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 400px;
+            -ms-flex: 0 0 400px;
+                flex: 0 0 400px;
+        text-align: center;
     }
 }
 @media (max-width: 600px) {
@@ -196,10 +248,10 @@ tt {
     .below {
         font-size: 2rem;
     }
-    p, li {
+    p, li, figcaption {
         font-size: 90%;
     }
-    p {
+    not(.subpage) p {
         width: 73.4vw;
         font-size: 0.8rem;
     }
@@ -280,4 +332,52 @@ tt {
         text-align: right;
     }
 }
-
+/* Shrink images in figure */
+@media (max-width: 500px) {
+    figure > img {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 300px;
+            -ms-flex: 0 0 300px;
+                flex: 0 0 300px;
+        margin: 0 0 1rem 0;
+    }
+    figcaption {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 300px;
+            -ms-flex: 0 1 300px;
+                flex: 0 1 300px;
+    }
+    .h337 {
+        height: 253px;
+    }
+    .h364 {
+        height: 273px;
+    }
+    .h533 {
+        height: 400px;
+    }
+}
+@media (max-width: 338px) {
+    figure > img {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 250px;
+            -ms-flex: 0 0 250px;
+                flex: 0 0 250px;
+        margin: 0 0 1rem 0;
+    }
+    figcaption {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 250px;
+            -ms-flex: 0 1 250px;
+                flex: 0 1 250px;
+    }
+    .h337 {
+        height: 211px;
+    }
+    .h364 {
+        height: 227.5px;
+    }
+    .h533 {
+        height: 333px;
+    }
+}
