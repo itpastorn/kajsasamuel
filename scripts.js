@@ -1,16 +1,36 @@
 (function () {
     if ( document.getElementById("days") ) {
-        var edays  = document.getElementById("days"),
-            ehours = document.getElementById("hours"),
-            emins  = document.getElementById("minutes"),
-            esecs  = document.getElementById("seconds"),
-            ednoun = document.getElementById("daynoun"),
-            ehnoun = document.getElementById("hournoun"),
-            emnoun = document.getElementById("minnoun"),
-            esnoun = document.getElementById("secnoun");
+        var edays   = document.getElementById("days"),
+            ehours  = document.getElementById("hours"),
+            emins   = document.getElementById("minutes"),
+            esecs   = document.getElementById("seconds"),
+            ednoun  = document.getElementById("daynoun"),
+            ehnoun  = document.getElementById("hournoun"),
+            emnoun  = document.getElementById("minnoun"),
+            esnoun  = document.getElementById("secnoun"),
+            counter = document.getElementsByClassName("counter")[0],
+            onlybefore = document.getElementsByClassName("onlybefore");
 
         function countDown() {
             var seconds = Math.round((Date.UTC(2015,7,15,12) - Date.now())/1000);
+            // Test
+            // var seconds = Math.round((Date.UTC(2015,7,14,15) - Date.now())/1000);
+            if ( seconds < -1800 ) {
+                counter.innerHTML = "Nu är vi gifta!";
+                counter.classList.remove("inprogress");
+                counter.classList.add("married");
+                onlybefore[0].classList.add("removed");
+                onlybefore[1].classList.add("removed");
+                return false;
+            }
+            if ( seconds < 0 ) {
+                counter.innerHTML = "Nu gifter vi oss!";
+                counter.classList.add("inprogress");
+                onlybefore[0].classList.add("removed");
+                onlybefore[1].classList.add("removed");
+                setTimeout(countDown, 2000);
+                return true;
+            }
             var days = Math.floor(seconds/3600/24);
             seconds -= days * 24 * 3600;
             var hours = Math.floor(seconds/3600);
@@ -25,9 +45,9 @@
             ehnoun.innerHTML = (Math.abs(hours) === 1) ? "e": "ar";
             emnoun.innerHTML = (Math.abs(minutes) === 1) ? "": "er";
             esnoun.innerHTML = (Math.abs(seconds) === 1) ? "": "er";
+            setTimeout(countDown, 200);
         }
         countDown();
-        setInterval(countDown, 200);
     }
 
     function widthChange(mq) {

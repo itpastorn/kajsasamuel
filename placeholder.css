@@ -144,7 +144,7 @@ tt {
     width: 449px;
     line-height: 1.7;
     border: 1px solid hsla(0, 50%, 15%,0.2);
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
     background-color: rgba(255,255,255,0.2)
 }
@@ -185,6 +185,47 @@ iframe {
     max-height: 600px;
     border: 0;
     border-radius: 5px;
+}
+.inprogress,
+.married {
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    -webkit-animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+.inprogress {
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+}
+.married {
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+}
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(2);
+    }
+}
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+    }
+}
+.removed {
+    display: none;
 }
 @media (max-width: 800px) {
     body {
